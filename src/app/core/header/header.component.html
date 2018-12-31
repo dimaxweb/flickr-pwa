@@ -1,0 +1,23 @@
+<header>
+  <div class="header-container" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+    <!--user available actions-->
+    <div class="actions" fxLayoutAlign="start center">
+      <a [routerLink] = "['/main']"><img alt="Flickr PWA" src="../../../assets/icons/favicon-16x16.png" /></a>
+      <div class="search">
+        <form [formGroup]="searchForm" (submit)="submit()" class="frm-search">
+          <mat-form-field class="search-query">
+            <input matInput [formControlName]="'searchControl'"  type="search" />
+            <img src="../../../assets/images/search-glass.svg" style="width: 30px;height: 30px;display: none" />
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth-container"  fxLayoutAlign="end center" fxShow fxShow.xs="false">
+      <div matTooltip="Upload photos.Coming soon!" class="button-upload"></div>
+      <button class="button-search" matTooltip="Coming soon!" mat-button>Login</button>
+      <button class="button-search" matTooltip="Coming soon!" mat-flat-button>Sign Up</button>
+    </div>
+
+  </div>
+</header>

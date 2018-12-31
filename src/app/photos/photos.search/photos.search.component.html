@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="gallery-summary" fxLayout="row">
+  <div class="results-title" fxFlex="80"><span class="total">{{titleTotal}}</span></div>
+
+  <div class="view-switch" fxLayout="row" fxFlex="20"  fxLayoutAlign="end center">
+   </div>
+
+  </div>
+
+  <!--regular view-->
+  <div class="cards" *ngIf="!isCardView" [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"  fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill
+       infiniteScroll
+       [infiniteScrollDistance]="0.1"
+       [infiniteScrollThrottle]="100"
+       (scrolled)="onScrollDown()">
+    <div *ngFor="let photo of photos?.photo" class="photo-container" [ngStyle.xs]="{width: '100%'}">
+      <img alt="{{photo.title}}" src={{photo.url_s}} [ngStyle.xs]="{width: '100%',height:photo.height_s}">
+      <div class="photo-info">
+        <div class="title">{{photo.title}}</div>
+        <div class="author">By {{photo.ownername}}</div>
+    </div>
+  </div>
+   </div>
+</div>
