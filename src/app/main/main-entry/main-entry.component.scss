@@ -1,3 +1,17 @@
 .current-inspiration{
-  position: absolute;width: 100%;height: 100%;background-position: 50%;background-repeat: no-repeat;background-size: cover;z-index: 2;
+  min-height: 20vh;
+  width: 40vw;
+  margin-left: 27vw;
+  margin-top:45vh;
+  color:#ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .view-project{
+    .button-github{
+      width:20vw;
+      height: 5vh;
+    }
+  }
 }

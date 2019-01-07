@@ -1,16 +1,38 @@
-<div>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
+<div class="filter-container">
+  <mat-divider></mat-divider>
+  <form class="filter-form">
+    <!--Min upload date -->
+    <mat-form-field>
+      <input matInput [matDatepicker]="pickerMinDate" placeholder="Minimum upload date">
+      <mat-datepicker-toggle matSuffix [for]="pickerMinDate"></mat-datepicker-toggle>
+      <mat-datepicker #pickerMinDate></mat-datepicker>
+    </mat-form-field>
+    <!--min upload date-->
+    <!--Max upload date -->
+    <mat-form-field>
+      <input matInput [matDatepicker]="pickerMaxDate" placeholder="Maximum upload date">
+      <mat-datepicker-toggle matSuffix [for]="pickerMaxDate"></mat-datepicker-toggle>
+      <mat-datepicker #pickerMaxDate></mat-datepicker>
+    </mat-form-field>
+    <!--max upload date-->
+    <!--filter-->
+    <!--<mat-form-field class="example-chip-list">-->
+      <!--<mat-chip-list #chipList>-->
+        <!--<mat-chip *ngFor="let tag of tags" [selectable]="selectable"-->
+                  <!--[removable]="removable" (removed)="remove(fruit)">-->
+          <!--{{fruit.name}}-->
+          <!--<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>-->
+        <!--</mat-chip>-->
+        <!--<input placeholder="Newtag..."-->
+               <!--[matChipInputFor]="chipList"-->
+               <!--[matChipInputSeparatorKeyCodes]="separatorKeysCodes"-->
+               <!--[matChipInputAddOnBlur]="addOnBlur"-->
+               <!--(matChipInputTokenEnd)="addTag($event)">-->
+      <!--</mat-chip-list>-->
+    <!--</mat-form-field>-->
+    <!--filter-->
 
 
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form>
+  </form>
 </div>

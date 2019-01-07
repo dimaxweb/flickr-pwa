@@ -1,13 +1,17 @@
 <div class="container">
 
   <div class="gallery-summary" fxLayout="row">
-  <div class="results-title" fxFlex="80"><span class="total">{{titleTotal}}</span></div>
-
-  <div class="view-switch" fxLayout="row" fxFlex="20"  fxLayoutAlign="end center">
-   </div>
-
+  <div class="results-title" fxFlex="70"><span class="total">{{titleTotal}}</span></div>
+  <div class="view-switch" fxLayout="row" fxFlex="10"  fxLayoutAlign="end center"></div>
+  <div fxFlex="10">
+  <!--filter toogle put here-->
   </div>
-
+  </div>
+  <!-- Photos filter-->
+  <div class="filter-container">
+    <app-photos-advanced-filter></app-photos-advanced-filter>
+  </div>
+  <!-- photos filter-->
   <!--regular view-->
   <div class="cards" *ngIf="!isCardView" [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"  fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill
        infiniteScroll
