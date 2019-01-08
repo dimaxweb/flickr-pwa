@@ -9,8 +9,12 @@ import {Component, Injectable, OnInit} from '@angular/core';
 export class MainEntryComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit() {
   }
+
+  goToGithub(){
+    window.open('https://github.com/dimaxweb/flickr-pwa');
+  }
+
 
 }
