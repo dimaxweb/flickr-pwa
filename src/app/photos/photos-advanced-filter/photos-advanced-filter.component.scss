@@ -5,4 +5,13 @@
   margin-top: 2vh;
   width: 90%;
   padding-left: 7vh;
+  .filter-form{
+    mat-form-field{
+      margin: 0px 10px;
+      &.tag-list{
+        width: 400px;
+      }
+    }
+
+  }
 }

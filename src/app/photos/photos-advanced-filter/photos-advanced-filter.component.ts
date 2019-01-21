@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from '@angular/material';
+import {MatAutocomplete, MatAutocompleteSelectedEvent, MatChipInputEvent} from '@angular/material';
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-photos-advanced-filter',
@@ -9,22 +10,22 @@ import {MatChipInputEvent} from '@angular/material';
 })
 export class PhotosAdvancedFilterComponent implements OnInit {
 
+  @ViewChild('tagsInput') tagsInput: ElementRef<HTMLInputElement>;
+  @ViewChild('tagsSourceAuto') tagsSourceAuto: MatAutocomplete;
+
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  visible = true;
+  ngOnInit() {}
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  tags: any[] = [
-    {name: 'Lemon'},
-    {name: 'Lime'},
-    {name: 'Apple'},
+  tags: any[] = [];
+  tagsControl= new FormControl();
+  tagsMode: any[] = [
+    {value: 'AND', viewValue: 'And'},
+    {value: 'OR', viewValue: 'Or'},
   ];
-
   addTag(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -40,7 +41,7 @@ export class PhotosAdvancedFilterComponent implements OnInit {
     }
   }
 
-  remove(tag: any): void {
+  removeTag(tag: any): void {
     const index = this.tags.indexOf(tag);
 
     if (index >= 0) {

@@ -1,11 +1,26 @@
 <div class="container">
-
   <div class="gallery-summary" fxLayout="row">
-  <div class="results-title" fxFlex="70"><span class="total">{{titleTotal}}</span></div>
-  <div class="view-switch" fxLayout="row" fxFlex="10"  fxLayoutAlign="end center"></div>
-  <div fxFlex="10">
-  <!--filter toogle put here-->
-  </div>
+    <div class="results-title" fxLayout="row" fxFlex="100" fxLayoutAlign="start center">
+      <div class="total" fxFlex="30" fxLayoutAlign="start start">{{titleTotal}}</div>
+      <div class="sort-and-filter-actions" fxFlex="65" fxLayoutAlign="end center">
+        <div class="sort-select-container" fxLayout="row">
+          <div fxFlex="30">Sort By:</div>
+          <div fxFlex="70">
+            <mat-select placeholder="">
+              <mat-option *ngFor="let sortOption of sortOptions"
+                          [value]="sortOption.value">
+                {{sortOption.viewValue}}
+              </mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="filter-icon-container">
+          <mat-icon>filter</mat-icon>
+        </div>
+      </div>
+
+
+    </div>
   </div>
   <!-- Photos filter-->
   <div class="filter-container">
@@ -13,7 +28,8 @@
   </div>
   <!-- photos filter-->
   <!--regular view-->
-  <div class="cards" *ngIf="!isCardView" [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"  fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill
+  <div class="cards" *ngIf="!isCardView" [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"
+       fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill
        infiniteScroll
        [infiniteScrollDistance]="0.1"
        [infiniteScrollThrottle]="100"
@@ -23,7 +39,7 @@
       <div class="photo-info">
         <div class="title">{{photo.title}}</div>
         <div class="author">By {{photo.ownername}}</div>
+      </div>
     </div>
   </div>
-   </div>
 </div>

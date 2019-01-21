@@ -1,6 +1,6 @@
 <div class="filter-container">
   <mat-divider></mat-divider>
-  <form class="filter-form">
+    <form class="filter-form">
     <!--Min upload date -->
     <mat-form-field>
       <input matInput [matDatepicker]="pickerMinDate" placeholder="Minimum upload date">
@@ -16,20 +16,34 @@
     </mat-form-field>
     <!--max upload date-->
     <!--filter-->
-    <!--<mat-form-field class="example-chip-list">-->
-      <!--<mat-chip-list #chipList>-->
-        <!--<mat-chip *ngFor="let tag of tags" [selectable]="selectable"-->
-                  <!--[removable]="removable" (removed)="remove(fruit)">-->
-          <!--{{fruit.name}}-->
-          <!--<mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>-->
-        <!--</mat-chip>-->
-        <!--<input placeholder="Newtag..."-->
-               <!--[matChipInputFor]="chipList"-->
-               <!--[matChipInputSeparatorKeyCodes]="separatorKeysCodes"-->
-               <!--[matChipInputAddOnBlur]="addOnBlur"-->
-               <!--(matChipInputTokenEnd)="addTag($event)">-->
-      <!--</mat-chip-list>-->
-    <!--</mat-form-field>-->
+    <mat-form-field class="tag-list">
+      <mat-chip-list #chipList>
+        <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                  [removable]="removable" (removed)="removeTag(tag)">
+          {{tag.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="New Tag..."
+               #tagsInput
+               [formControl]="tagsControl"
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="addTag($event)">
+      </mat-chip-list>
+
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-select placeholder="Tags Mode">
+        <mat-option *ngFor="let tagMode of tagsMode"
+                    [value]="tagMode.value">
+          {{tagMode.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <!--filter-->
 
 

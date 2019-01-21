@@ -9,6 +9,7 @@ import { PipesModule } from 'app/shared/pipes/pipes.module';
 import {PhotosModule} from './photos/photos.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MainModule} from './main/main.module';
+import { MatIconModule } from "@angular/material/icon"
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MainModule} from './main/main.module';
     SharedComponentsModule,
     PipesModule,
     PhotosModule,
-    MainModule
+    MainModule,
+    MatIconModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]

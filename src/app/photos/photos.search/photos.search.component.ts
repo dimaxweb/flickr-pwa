@@ -16,11 +16,28 @@ import {LoaderService} from '../../shared/services/loader/loader.service';
 export class PhotosSearchComponent implements OnInit {
   public photos: Photos = new Photos()
   public page = 0;
-  public isLoading = false;
   public isCardView = false;
   public titleTotal = null;
+  public sortOptions: any = [
+    {
+      viewValue: 'Date Posted Ascending',
+      value: 'date-posted-asc'
+    },
+    {
+      viewValue: 'Date Posted Descending',
+      value: 'date-posted-desc'
+    },
+    {
+      viewValue: 'Date Taken Ascending ',
+      value: 'date-taken-asc'
+    },
+    {
+      viewValue: 'Date Taken Descending',
+      value: 'date-taken-desc'
+    }
+  ]
   searchParams: any;
-  private faCoffee: any;
+
   constructor(private formBuilder: FormBuilder,
               private flickrService: FlickrApiService,
               private loaderService: LoaderService,

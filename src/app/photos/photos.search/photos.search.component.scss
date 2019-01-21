@@ -55,6 +55,17 @@ $headerColor : #fff;
     .view-switch{
       padding-right: 5%;
     }
+    .sort-and-filter-actions{
+      .sort-select-container{
+        width : 30%;
+        margin: 0 10px;
+      }
+      .filter-icon-container{
+        cursor: pointer;
+      }
+
+    }
+
   }
 
   .cards{
