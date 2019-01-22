@@ -62,10 +62,16 @@ $headerColor : #fff;
       }
       .filter-icon-container{
         cursor: pointer;
+        padding: 0 20px;
+        mat-icon{
+          cursor: pointer;
+        }
       }
-
     }
 
+  }
+  .filter-container{
+    padding: 0 5vw 0 3vw;
   }
 
   .cards{
@@ -81,10 +87,10 @@ $headerColor : #fff;
       margin: 5px;
       cursor: pointer;
       &:hover{
-        .photo-info{
-          display: block;
-        }
-        min-height: 85vh !important;
+        //.photo-info{
+        //  display: block;
+        //}
+        //min-height: 85vh !important;
       }
       .photo-info{
         color: #fff;

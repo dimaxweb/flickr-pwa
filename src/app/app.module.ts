@@ -9,7 +9,11 @@ import { PipesModule } from 'app/shared/pipes/pipes.module';
 import {PhotosModule} from './photos/photos.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MainModule} from './main/main.module';
-import { MatIconModule } from "@angular/material/icon"
+import { MatIconModule } from "@angular/material/icon";
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment'
 
 
 @NgModule({
@@ -27,7 +31,9 @@ import { MatIconModule } from "@angular/material/icon"
     PipesModule,
     PhotosModule,
     MainModule,
-    MatIconModule
+    MatIconModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [ ],
   bootstrap: [AppComponent]

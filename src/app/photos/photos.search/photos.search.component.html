@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" fxLayout="column">
   <div class="gallery-summary" fxLayout="row">
     <div class="results-title" fxLayout="row" fxFlex="100" fxLayoutAlign="start center">
       <div class="total" fxFlex="30" fxLayoutAlign="start start">{{titleTotal}}</div>
@@ -6,7 +6,7 @@
         <div class="sort-select-container" fxLayout="row">
           <div fxFlex="30">Sort By:</div>
           <div fxFlex="70">
-            <mat-select placeholder="">
+            <mat-select placeholder="" [(value)]="selectedOption">
               <mat-option *ngFor="let sortOption of sortOptions"
                           [value]="sortOption.value">
                 {{sortOption.viewValue}}
@@ -14,17 +14,23 @@
             </mat-select>
           </div>
         </div>
-        <div class="filter-icon-container">
+        <div class="filter-icon-container" (click)="onFilterChange()" style="z-index: 100" matTooltip="Filter results">
           <mat-icon>filter</mat-icon>
         </div>
       </div>
 
-
     </div>
   </div>
   <!-- Photos filter-->
-  <div class="filter-container">
-    <app-photos-advanced-filter></app-photos-advanced-filter>
+  <div class="filter-container" fxFlex="row" *ngIf="isFilterOpen">
+    <mat-divider></mat-divider>
+    <div fxFlex="80" fxLayoutAlign="start start">
+      <app-photos-advanced-filter></app-photos-advanced-filter>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="end center">
+      <button class="button-search" mat-button>Cancel</button>
+      <button class="button-search" ngClass.xs="button-search-xs" matTooltip="Apply Serach" mat-flat-button>Apply</button>
+    </div>
   </div>
   <!-- photos filter-->
   <!--regular view-->

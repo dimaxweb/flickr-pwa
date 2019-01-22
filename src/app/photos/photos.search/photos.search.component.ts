@@ -16,9 +16,14 @@ import {LoaderService} from '../../shared/services/loader/loader.service';
 export class PhotosSearchComponent implements OnInit {
   public photos: Photos = new Photos()
   public page = 0;
-  public isCardView = false;
+  public isFilterOpen = false;
   public titleTotal = null;
   public sortOptions: any = [
+    {
+      viewValue: 'Relevance',
+      value: 'relevance',
+      selected: true
+    },
     {
       viewValue: 'Date Posted Ascending',
       value: 'date-posted-asc'
@@ -34,8 +39,13 @@ export class PhotosSearchComponent implements OnInit {
     {
       viewValue: 'Date Taken Descending',
       value: 'date-taken-desc'
+    },
+    {
+      viewValue: 'Date Taken Descending',
+      value: 'date-taken-desc'
     }
-  ]
+  ];
+  public selectedOption = this.sortOptions[0].value
   searchParams: any;
 
   constructor(private formBuilder: FormBuilder,
@@ -64,6 +74,10 @@ export class PhotosSearchComponent implements OnInit {
   }
   public onScrollDown() {
     this.search(this.searchParams, ++this.page);
+  }
+  onFilterChange(){
+    console.log('Testing', this.isFilterOpen);
+    this.isFilterOpen = !this.isFilterOpen;
   }
 
 }
