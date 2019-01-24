@@ -1,4 +1,5 @@
 $headerColor : #fff;
+$internal-padding : 2vw;
 .container{
   min-height: calc(100vh - 70px);
   margin-top:90px;
@@ -49,11 +50,22 @@ $headerColor : #fff;
   }
 
   .gallery-summary{
+    margin-bottom: 1rem;
+    min-width: 100%;
+    padding-left: 4vw;
+    padding-right: 5vw;
     .results-title{
-      margin-left: 4%;
+      background-color: rgba(255,255,255,.25);
+      box-shadow: 1px 1px 21px 0 #1b1e23;
+      min-height: 5vh;;
+      min-width: 90vw;
+      padding : 1vw $internal-padding;
     }
-    .view-switch{
-      padding-right: 5%;
+    .filter-container{
+      background-color: rgba(255,255,255,.25);
+      box-shadow: 1px 1px 21px 0 #1b1e23;
+      min-width: 90vw;
+      margin-top: 1px;
     }
     .sort-and-filter-actions{
       .sort-select-container{
@@ -62,7 +74,6 @@ $headerColor : #fff;
       }
       .filter-icon-container{
         cursor: pointer;
-        padding: 0 20px;
         mat-icon{
           cursor: pointer;
         }
@@ -71,7 +82,7 @@ $headerColor : #fff;
 
   }
   .filter-container{
-    padding: 0 5vw 0 3vw;
+    padding:  $internal-padding;
   }
 
   .cards{
