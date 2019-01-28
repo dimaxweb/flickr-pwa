@@ -2,7 +2,7 @@
   min-height: 20vh;
   width: 40vw;
   margin-left: 27vw;
-  margin-top:45vh;
+  margin-top:20vh;
   color:#ffffff;
   display: flex;
   justify-content: center;
@@ -17,5 +17,9 @@
       border-radius: 20px;
       cursor:pointer;
     }
+  }
+  .author-details{
+    margin-top: 20vh;
+    z-index: 1;
   }
 }

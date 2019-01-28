@@ -36,7 +36,7 @@
   </div>
   <!-- Sort and filter options -->
   <!--regular view-->
-  <div class="cards" *ngIf="!isCardView" [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"
+  <div class="cards"  [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"
        fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill
        infiniteScroll
        [infiniteScrollDistance]="0.1"

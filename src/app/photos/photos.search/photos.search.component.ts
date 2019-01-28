@@ -76,7 +76,6 @@ export class PhotosSearchComponent implements OnInit {
     this.search(this.searchParams, ++this.page);
   }
   onFilterChange(){
-    console.log('Testing', this.isFilterOpen);
     this.isFilterOpen = !this.isFilterOpen;
   }
 
