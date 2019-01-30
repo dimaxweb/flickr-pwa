@@ -2,7 +2,7 @@
   min-height: 20vh;
   width: 40vw;
   margin-left: 27vw;
-  margin-top:20vh;
+  margin-top:30vh;
   color:#ffffff;
   display: flex;
   justify-content: center;
@@ -17,9 +17,19 @@
       border-radius: 20px;
       cursor:pointer;
     }
+    .button-github-xs{
+      width: 137px;
+      height: 38px;
+      background-color: #fff;
+      font-size: 0.8rem;
+      border-radius: 20px;
+      cursor:pointer;
+    }
+
   }
+
   .author-details{
-    margin-top: 20vh;
+    margin-top: 40vh;
     z-index: 1;
   }
 }

@@ -1,22 +1,21 @@
-<div class="filter-container">
-  <mat-divider></mat-divider>
-    <form class="filter-form">
+<div class="filter-container"  fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start center">
+  <form class="filter-form" [ngClass.xs] = "'filter-form-xs'">
     <!--Min upload date -->
-    <mat-form-field>
+    <mat-form-field [ngStyle.xs]="{display:'inline'}">
       <input matInput [matDatepicker]="pickerMinDate" placeholder="Minimum upload date">
       <mat-datepicker-toggle matSuffix [for]="pickerMinDate"></mat-datepicker-toggle>
       <mat-datepicker #pickerMinDate></mat-datepicker>
     </mat-form-field>
     <!--min upload date-->
     <!--Max upload date -->
-    <mat-form-field>
+    <mat-form-field [ngStyle.xs]="{display:'inline'}">
       <input matInput [matDatepicker]="pickerMaxDate" placeholder="Maximum upload date">
       <mat-datepicker-toggle matSuffix [for]="pickerMaxDate"></mat-datepicker-toggle>
       <mat-datepicker #pickerMaxDate></mat-datepicker>
     </mat-form-field>
     <!--max upload date-->
     <!--filter-->
-    <mat-form-field class="tag-list">
+    <mat-form-field class="tag-list" [ngStyle.xs]="{display:'inline', width: '100%'}">
       <mat-chip-list #chipList>
         <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
                   [removable]="removable" (removed)="removeTag(tag)">
@@ -31,11 +30,9 @@
                [matChipInputAddOnBlur]="addOnBlur"
                (matChipInputTokenEnd)="addTag($event)">
       </mat-chip-list>
-
     </mat-form-field>
 
-
-    <mat-form-field>
+    <mat-form-field [ngStyle.xs]="{display:'inline'}">
       <mat-select placeholder="Tags Mode">
         <mat-option *ngFor="let tagMode of tagsMode"
                     [value]="tagMode.value">

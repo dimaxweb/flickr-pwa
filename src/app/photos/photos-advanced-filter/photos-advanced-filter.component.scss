@@ -1,15 +1,22 @@
+:host {
+  display: block;
+  width: 100%;
+}
 .filter-container{
-  display: flex;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
   margin-top: 2vh;
   .filter-form{
     mat-form-field{
       margin-right: 10px;
       &.tag-list{
-        width: 400px;
+        width: 20%;
       }
     }
 
   }
+  .filter-form-xs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
 }

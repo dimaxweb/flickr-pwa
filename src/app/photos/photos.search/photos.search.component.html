@@ -1,10 +1,10 @@
 <div class="container" fxLayout="column" fxLayoutAlign="center start">
   <!--Search results summary , sort and filter options-->
   <div class="gallery-summary" fxLayout="column">
-    <div class="results-title" fxLayout="row" fxFlex="100" fxLayoutAlign="start center">
+    <div class="results-title" fxLayout="row" fxFlex="100" fxLayoutAlign="start center" ngShow="photos?.photo">
       <div class="total" fxFlex="30" fxLayoutAlign="start start">{{titleTotal}}</div>
       <div class="sort-and-filter-actions" fxFlex="70" fxLayoutAlign="end center">
-        <div class="sort-select-container" fxLayout="row">
+        <div class="sort-select-container" fxLayout="row" fxShow fxShow.xs="false">
           <div fxFlex="30">Sort By:</div>
           <div fxFlex="70">
             <mat-select placeholder="" [(value)]="selectedOption">
@@ -22,12 +22,11 @@
 
     </div>
     <!-- Photos filter-->
-    <div class="filter-container" fxFlex="row" *ngIf="isFilterOpen">
-      <mat-divider></mat-divider>
+    <div class="filter-container" fxFlex="row" *ngIf="isFilterOpen" fxLayout="row" fxLayout.xs="column">
       <div fxFlex="80" fxLayoutAlign="start start">
         <app-photos-advanced-filter></app-photos-advanced-filter>
       </div>
-      <div fxFlex="20" fxLayoutAlign="end center">
+      <div fxFlex="20" fxLayoutAlign="end center" fxLayoutAlign.xs="center center">
         <button class="button-search" mat-button>Cancel</button>
         <button class="button-search" ngClass.xs="button-search-xs" matTooltip="Apply Serach" mat-flat-button>Apply</button>
       </div>
@@ -36,13 +35,13 @@
   </div>
   <!-- Sort and filter options -->
   <!--regular view-->
-  <div class="cards"  [ngClass]="{inLoading:isLoading}" fxLayout="row" fxLayoutAlign="center center"
+  <div class="cards" fxLayout="row" fxLayoutAlign="center center"
        fxLayout.xs="column" fxLayoutGap="10px" fxFlexFill
        infiniteScroll
        [infiniteScrollDistance]="0.1"
        [infiniteScrollThrottle]="100"
        (scrolled)="onScrollDown()">
-    <div *ngFor="let photo of photos?.photo" class="photo-container" [ngStyle.xs]="{width: '100%'}">
+    <div *ngFor="let photo of photos?.photo" class="photo-container" [ngStyle]="{width:photo.width_s,height:photo.height_s}" [ngStyle.xs]="{width: '100%'}">
       <img alt="{{photo.title}}" src={{photo.url_s}} [ngStyle.xs]="{width: '100%',height:photo.height_s}">
       <div class="photo-info">
         <div class="title">{{photo.title}}</div>
