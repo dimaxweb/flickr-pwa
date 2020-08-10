@@ -89,7 +89,7 @@
     "typescript": "3.1.6",
     "url-loader": "^0.5.7",
     "webpack": "^4.4.0",
-    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-dev-server": "~2.4.5",
     "workbox-cli": "^1.2.0"
   },
